@@ -1,0 +1,21 @@
+AutomateCert - Third-party notices
+=========================================
+AutomateCert. This product includes the following open-source components.
+Each component is the property of its respective authors and is used under the licence shown.
+
+.NET runtime and ASP.NET Core ......... MIT License ........ (c) .NET Foundation and Contributors  https://github.com/dotnet
+Entity Framework Core ................. MIT License ........ (c) .NET Foundation and Contributors  https://github.com/dotnet/efcore
+Microsoft.Extensions.* ................ MIT License ........ (c) .NET Foundation and Contributors
+Certes (ACME client) .................. MIT License ........ (c) Certes contributors              https://github.com/fszlin/certes
+MailKit / MimeKit ..................... MIT License ........ (c) .NET Foundation and Contributors https://github.com/jstedfast/MailKit
+DnsClient.NET ......................... Apache License 2.0 . (c) Michael Conrad                    https://github.com/MichaCo/DnsClient.NET
+QRCoder ............................... MIT License ........ (c) Raffael Herrmann and contributors https://github.com/codebude/QRCoder
+Inno Setup (installer builder) ........ Inno Setup License . (c) Jordan Russell / Martijn Laan     https://jrsoftware.org
+
+Full licence texts are available at the URLs above and are included in the NuGet packages restored at build time.
+Verify versions and licences in the final build (dotnet list package --include-transitive) before distribution.
+
+Third-party services used at runtime when configured by the customer:
+- Certificate authorities via ACME (Let's Encrypt/ISRG, DigiCert, Sectigo, GlobalSign, ZeroSSL, Google Trust Services) - subject to each CA's terms.
+- crt.sh (Sectigo) for Certificate Transparency search - public service, no availability guarantee.
+- DNS provider APIs (Cloudflare, Azure, AWS Route 53, GoDaddy) and the customer's AI endpoint - subject to their terms.

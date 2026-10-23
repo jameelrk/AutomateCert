@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Version>1.5.0</Version>
+    <Product>AutomateCert</Product>
+    <Copyright>Copyright © AutomateCert contributors</Copyright>
+  </PropertyGroup>
+</Project>

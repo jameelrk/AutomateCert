@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4F46E5">
+  <meta name="description" content="AutomateCert — certificate lifecycle automation">
+  <title>AutomateCert</title>
+  <link rel="icon" href="/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/app.css?v=1.5.0">
+</head>
+<body>
+  <!-- Sign-in -->
+  <div id="auth" class="auth hidden">
+    <section class="auth-hero" aria-hidden="true">
+      <div class="auth-grid"></div>
+      <div class="auth-hero-inner">
+        <img src="/img/logo-white.png" alt="AutomateCert" class="auth-logo">
+        <p class="eyebrow">AutomateCert</p>
+        <h1>Every certificate.<br>Every server. Every CA.<br><span>One console.</span></h1>
+        <ul class="auth-points">
+          <li>Discover certificates, bindings and endpoints automatically</li>
+          <li>Renew from DigiCert, Sectigo, GlobalSign, free Let's Encrypt or AD CS</li>
+          <li>Zero-downtime adoption, AD FS &amp; Dynamics CRM aware, verify and roll back</li>
+          <li>Autopilot recommendations and an AI copilot that asks before it acts</li>
+        </ul>
+        <div class="trust-row"><span>TLS 1.3</span><span>Two-step sign-in</span><span>AES-256 at rest</span><span>Keys never leave servers</span></div>
+      </div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-card" id="auth-body"></div>
+      <p class="auth-foot legal">Authorised use only. Sign-ins and changes are logged and audited.</p>
+      <p class="auth-foot">AutomateCert</p>
+    </section>
+  </div>
+
+  <div id="gate" class="gate hidden"><div class="auth-card wide" id="gate-body"></div></div>
+
+  <!-- App -->
+  <div id="shell" class="shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><img src="/img/logo-white.png" alt="AutomateCert"></div>
+      <nav id="nav" aria-label="Main"></nav>
+      <div class="me" id="me"></div>
+    </aside>
+    <div class="scrim hidden" id="scrim"></div>
+    <main>
+      <header class="topbar">
+        <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu"></button>
+        <div class="title-wrap"><h1 id="title">Overview</h1><p class="subtitle" id="subtitle"></p></div>
+        <div class="top-tools">
+          <button type="button" class="search-btn" id="search-btn" aria-label="Search (Ctrl+K)"><span class="search-ico"></span><span class="search-label">Search or jump to…</span><kbd>Ctrl K</kbd></button>
+          <button type="button" class="icon-btn" id="theme-btn" aria-label="Toggle theme"></button>
+        </div>
+      </header>
+      <div class="page-actions" id="actions"></div>
+      <section id="view" class="view" aria-live="polite"></section>
+    </main>
+    <nav class="tabbar" id="tabbar" aria-label="Quick navigation"></nav>
+  </div>
+
+  <button type="button" id="copilot-fab" class="fab hidden" aria-label="Open AutomateCert Copilot"><span class="spark"></span><span>Copilot</span></button>
+  <aside id="copilot" class="drawer hidden" aria-label="AutomateCert Copilot">
+    <div class="drawer-head">
+      <div><b>AutomateCert Copilot</b><small>Live data · proposes actions, you approve</small></div>
+      <button type="button" class="icon-btn" id="copilot-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="chat" id="chat"></div>
+    <div class="chips" id="chips"></div>
+    <form class="chat-input" id="chat-form">
+      <input id="chat-text" autocomplete="off" placeholder="Ask about expiries, vendors, AD FS, failures…" maxlength="2000">
+      <button class="btn primary" type="submit">Send</button>
+    </form>
+  </aside>
+
+  <div id="palette" class="palette hidden" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-card">
+      <input id="palette-input" placeholder="Type a page, action or certificate…" autocomplete="off">
+      <div id="palette-list" class="palette-list"></div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head"><h2 id="modal-title"></h2><button type="button" class="icon-btn" id="modal-close" aria-label="Close">&times;</button></div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="/app.js?v=1.5.0"></script>
+</body>
+</html>
