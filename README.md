@@ -1,5 +1,3 @@
-# AutomateCert
-
 **Certificate lifecycle automation for Windows estates — every certificate, every server, every CA, one console.**
 
 AutomateCert discovers TLS certificates on Windows servers and network endpoints and renews them from any certificate authority (Let's Encrypt, DigiCert, Sectigo, GlobalSign, ZeroSSL, Google Trust Services, private ACME, Microsoft AD CS). It deploys them to IIS, AD FS, WAP, Exchange, RD Gateway, RDP, SQL Server and Dynamics CRM, verifies every step, rolls back on failure, and alerts and audits everything.
@@ -101,7 +99,17 @@ The installer publisher name and URL are build-time defines (`ISCC /DAppPublishe
 - The Sectigo account connector supports Sectigo Certificate Manager (SCM) only, not the partner/reseller API.
 
 ## Disclaimer
-AutomateCert changes live server configuration. Test with a staging certificate authority first, keep approvals on for production identity systems, and accept each CA's subscriber agreement. AI output can be wrong; verify before acting.
+Use at your own risk. AutomateCert is provided "as is", without warranty of any kind, express or implied, including fitness for a particular purpose. The authors and contributors are not liable for any damage, outage, data loss, security incident, certificate mis-issuance or cost arising from its use.
+
+AutomateCert installs certificates and changes live configuration of IIS, AD FS, WAP, Exchange, RDP, SQL Server, Dynamics CRM and DNS. Before production use:
+
+test with a staging certificate authority and non-production servers;
+keep backups (server configuration, AD FS export, CRM database) and use maintenance windows;
+keep approvals enabled for production and identity systems.
+You are responsible for your certificate authority contracts and fees, domain ownership, compliance with each CA's subscriber agreement and the accuracy of certificate data. Only scan networks you own or are authorised to test. AI features can produce wrong answers; verify before acting.
+
+Microsoft, DigiCert, Sectigo, GlobalSign, Let's Encrypt and other names are trademarks of their respective owners. AutomateCert is not affiliated with or endorsed by them.
+## Test thoroughly before moving to production.
 
 ## Licence
 See [LICENSE](LICENSE). Third-party components: [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
